@@ -21,13 +21,29 @@ class DishPage extends StatelessWidget {
         light ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark);
   }
 
+  void _toggleFavorite(BuildContext context) {
+    final homeController = Get.instance.find<HomeController>();
+    final controller = context.read<DishController>();
+    if (!controller.isFavorite) {
+      final SnackBar snackBar = SnackBar(content: Text('Agregado a favoritos'));
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
+    controller.toggleFavorite();
+    homeController.toggleFavorite(controller.dish);
+    // controller.onDispose =
+    //     () => Get.instance.remove<HomeController>();
+  }
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<DishController>(
       create: (_) {
+        final homeController = Get.instance.find<HomeController>();
+
         final DishPageArguments args =
             ModalRoute.of(context).settings.arguments;
-        final controller = DishController(args);
+        final isFavorite = homeController.isFavorite(args.dish);
+        final controller = DishController(args, isFavorite);
         _setStatusBar(true);
         controller.onDispose = () => _setStatusBar(false);
 
@@ -77,14 +93,14 @@ class DishPage extends StatelessWidget {
                             CupertinoButton(
                               padding: EdgeInsets.all(10),
                               child: Icon(
-                                Icons.favorite_outline_outlined,
-                                color: Colors.grey,
+                                controller.isFavorite
+                                    ? Icons.favorite
+                                    : Icons.favorite_outline_outlined,
+                                color: controller.isFavorite
+                                    ? primaryColor
+                                    : Colors.grey,
                               ),
-                              onPressed: () {
-                                final homeController =
-                                    Get.instance.find<HomeController>();
-                                homeController.addFavorite(dish);
-                              },
+                              onPressed: () => _toggleFavorite(_),
                             )
                           ],
                         ),

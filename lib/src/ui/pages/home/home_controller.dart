@@ -6,8 +6,9 @@ class HomeController extends ChangeNotifier {
   int _currentPage = 0;
   int get currentPage => _currentPage;
 
-  List<Dish> _favorites = [];
-  List<Dish> get favorites => _favorites;
+  Map<int, Dish> _favorites = {};
+  Map<int, Dish> get favorites => _favorites;
+  bool isFavorite(dish) => _favorites.containsKey(dish.id);
 
   void Function() onDispose;
 
@@ -21,9 +22,24 @@ class HomeController extends ChangeNotifier {
     });
   }
 
-  void addFavorite(Dish dish) {
-    _favorites.add(dish);
+  void toggleFavorite(Dish dish) {
+    Map<int, Dish> copy = Map<int, Dish>.from(_favorites);
+    if (isFavorite(dish)) {
+      copy.remove(dish.id);
+    } else {
+      copy[dish.id] = dish;
+    }
+    _favorites = copy;
     notifyListeners();
+  }
+
+  void deleteFavorite(Dish dish) {
+    Map<int, Dish> copy = Map<int, Dish>.from(_favorites);
+    if (isFavorite(dish)) {
+      copy.remove(dish.id);
+      _favorites = copy;
+      notifyListeners();
+    }
   }
 
   @override

@@ -94,7 +94,7 @@ class DishHomeItem extends StatelessWidget {
                             text: '\$',
                             children: [
                               TextSpan(
-                                text: '${item.price}',
+                                text: '${item.price}0',
                                 style: TextStyle(fontSize: 20),
                               ),
                             ],
