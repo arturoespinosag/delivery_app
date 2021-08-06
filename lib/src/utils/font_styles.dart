@@ -7,15 +7,15 @@ abstract class FontStyles {
     fontSize: 19,
     fontWeight: FontWeight.bold,
   );
-  static final normal = GoogleFonts.syne(
+  static final normal = GoogleFonts.roboto(
     fontWeight: FontWeight.w100,
     fontSize: 16,
   );
 
-  static final regular = GoogleFonts.syne(
+  static final regular = GoogleFonts.robotoCondensed(
     fontWeight: FontWeight.w600,
     fontSize: 18,
   );
 
-  static final TextTheme textTheme = GoogleFonts.syneTextTheme();
+  static final TextTheme textTheme = GoogleFonts.robotoTextTheme();
 }

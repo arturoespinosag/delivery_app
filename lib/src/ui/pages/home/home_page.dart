@@ -1,12 +1,10 @@
+import 'package:deliveryapp/src/helpers/get.dart';
 import 'package:deliveryapp/src/ui/pages/home/home_controller.dart';
 import 'package:deliveryapp/src/ui/pages/home/tabs/account_tab.dart';
 import 'package:deliveryapp/src/ui/pages/home/tabs/favorites_tab.dart';
 import 'package:deliveryapp/src/ui/pages/home/tabs/home_tab/home_tab.dart';
 import 'package:deliveryapp/src/ui/pages/home/tabs/notifications_tab.dart';
 import 'package:deliveryapp/src/ui/pages/home/widgets/home_bottom_bar.dart';
-import 'package:deliveryapp/src/ui/pages/home/widgets/home_indicator.dart';
-import 'package:deliveryapp/src/utils/colors.dart';
-import 'package:deliveryapp/src/utils/font_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,11 +20,13 @@ class HomePage extends StatelessWidget {
           controller.afterFirstLayout();
         },
       );
+      Get.instance.put<HomeController>(controller);
+      controller.onDispose = () => Get.instance.remove<HomeController>();
       return controller;
     }, builder: (_, __) {
       final controller = Provider.of<HomeController>(_, listen: false);
       return Scaffold(
-        bottomNavigationBar: HomeBoottomBar(),
+        bottomNavigationBar: HomeBottomBar(),
         body: SafeArea(
           child: TabBarView(
             controller: controller.tabController,

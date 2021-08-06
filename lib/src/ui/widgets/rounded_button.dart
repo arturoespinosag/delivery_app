@@ -8,6 +8,7 @@ class RoundedButton extends StatelessWidget {
   final String label;
   final Color textColor, buttonColor, borderColor;
   final EdgeInsets padding;
+  final double fontSize;
 
   const RoundedButton({
     Key key,
@@ -17,6 +18,7 @@ class RoundedButton extends StatelessWidget {
     this.buttonColor = primaryColor,
     this.borderColor = primaryColor,
     this.padding = const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+    this.fontSize,
   }) : super(key: key);
 
   @override
@@ -37,6 +39,7 @@ class RoundedButton extends StatelessWidget {
           style: FontStyles.normal.copyWith(
             fontWeight: FontWeight.w600,
             color: this.textColor,
+            fontSize: this.fontSize,
           ),
         ),
       ),

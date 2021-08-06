@@ -7,8 +7,8 @@ import 'package:flutter_svg/svg.dart';
 
 import 'package:provider/provider.dart';
 
-class HomeBoottomBar extends StatelessWidget {
-  HomeBoottomBar({Key key}) : super(key: key);
+class HomeBottomBar extends StatelessWidget {
+  HomeBottomBar({Key key}) : super(key: key);
 
   final List<_BottomBarItem> _items = [
     _BottomBarItem(icon: 'assets/pages/home/home.svg', label: 'Home'),

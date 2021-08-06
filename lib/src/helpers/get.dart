@@ -12,12 +12,20 @@ class Get {
   }
 
   void put<T>(dynamic dependency, {String tag}) {
-    final key = _getKey(T, tag);
+    final String key = _getKey(T, tag);
     _data[key] = dependency;
   }
 
   T find<T>({String tag}) {
     final String key = _getKey(T, tag);
+    if (!_data.containsKey(key)) {
+      throw AssertionError("$key not found, make sure to call put first");
+    }
     return _data[key];
+  }
+
+  void remove<T>({String tag}) {
+    final String key = _getKey(T, tag);
+    _data.remove(key);
   }
 }

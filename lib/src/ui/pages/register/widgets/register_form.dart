@@ -1,4 +1,3 @@
-import 'package:deliveryapp/src/routes/routes.dart';
 import 'package:deliveryapp/src/ui/widgets/custom_form.dart';
 import 'package:deliveryapp/src/ui/widgets/input_text.dart';
 import 'package:deliveryapp/src/ui/widgets/rounded_button.dart';

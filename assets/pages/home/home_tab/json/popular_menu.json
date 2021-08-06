@@ -1,0 +1,36 @@
+[
+
+    {
+        "id": 123,
+        "name": "Whopper 2x1",
+        "price": 129.00,
+        "rating": 4.5,
+        "photo": "https://s3-sa-east-1.amazonaws.com/api-lac.production/images/discount_images/2021-06-09/579ffb6bf7dd6147a0df7cd83c7042ed.jpeg",
+        "description": "2 CONOS SENCILLOS de 82 g c/u (sabores a escoger: chocolate, vainilla o combinado) por $10. Válido del 28 de junio al 11 de octubre del 2021 y/o hasta agotar existencias."
+    },
+    {
+        "id": 124,
+        "name": "Papas 3x2",
+        "price": 64.00,
+        "rating": 4.7,
+        "photo": "https://s3-sa-east-1.amazonaws.com/api-lac.production/images/discount_images/2021-05-03/d6266eb8cbece202d00ca967bbe2ea1e.jpeg",
+        "description": "Tres papas grandes al 3x2 a sesenta y cuatro pesos $64.00. Válido del 3 de mayo al 8 de agosto del 2021 y/o hasta agotar existencias. El cupón podrá ser canjeado en la medida de la disponibilidad de los productos de las sucursales participantes."
+    },
+    {
+        "id": 125,
+        "name": "Combo Whopper",
+        "price": 69.00,
+        "rating": 4.6,
+        "photo": "https://s3-sa-east-1.amazonaws.com/api-lac.production/images/discount_images/2021-06-28/78ab22c9816434341c4e335aef699585.png",
+        "description": "1 Combo regular (chico) de Whopper® sin queso. Incluye: 1 Hamburguesa WHOPPER® sin queso de 306 g, + 1 porción de papas regulares (chicas) de 89 g + 1 refresco regular (chico) de 473 ml + 1 CONO SENCILLO de 82 g c/u (sabores a escoger: chocolate, vainilla o combinado) por 69 pesos. Válido del 3 de mayo al 8 de agosto del 2021 y/o hasta agotar existencias. El cupón podrá ser canjeado en la medida de la disponibilidad de los productos de las sucursales participantes."
+    },
+    {
+        "id": 126,
+        "name": "Cono 2x1",
+        "price": 10.00,
+        "rating": 4.8,
+        "photo": "https://s3-sa-east-1.amazonaws.com/api-lac.production/images/discount_images/2021-05-10/94b0bd6bb943bd22e347d45f084c5777.jpeg",
+        "description": "2 CONOS SENCILLOS de 82 g c/u (sabores a escoger: chocolate, vainilla o combinado) por $10. Válido del 28 de junio al 11 de octubre del 2021 y/o hasta agotar existencias."
+    }
+
+]
