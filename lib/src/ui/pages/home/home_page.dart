@@ -8,6 +8,8 @@ import 'package:deliveryapp/src/ui/pages/home/widgets/home_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'widgets/cart_button.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
 
@@ -27,6 +29,7 @@ class HomePage extends StatelessWidget {
       final controller = Provider.of<HomeController>(_, listen: false);
       return Scaffold(
         bottomNavigationBar: HomeBottomBar(),
+        floatingActionButton: CartButton(),
         body: SafeArea(
           child: TabBarView(
             controller: controller.tabController,

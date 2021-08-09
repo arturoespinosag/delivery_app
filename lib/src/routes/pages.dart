@@ -1,4 +1,5 @@
 import 'package:deliveryapp/src/routes/routes.dart';
+import 'package:deliveryapp/src/ui/pages/cart/cart_page.dart';
 import 'package:deliveryapp/src/ui/pages/dish/page/dish_page.dart';
 import 'package:deliveryapp/src/ui/pages/forgot_password/forgot_password_page.dart';
 import 'package:deliveryapp/src/ui/pages/home/home_page.dart';
@@ -18,5 +19,6 @@ abstract class Pages {
     Routes.forgot_password: (_) => ForgotPasswordPage(),
     Routes.home: (_) => HomePage(),
     Routes.dish: (_) => DishPage(),
+    Routes.cart: (_) => CartPage(),
   };
 }

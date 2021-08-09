@@ -2,15 +2,15 @@
 
     {
         "id": 123,
-        "name": "Whopper 2x1",
+        "name": "Bienvenido al reino",
         "price": 129.00,
         "rating": 4.5,
         "photo": "https://s3-sa-east-1.amazonaws.com/api-lac.production/images/discount_images/2021-06-09/579ffb6bf7dd6147a0df7cd83c7042ed.jpeg",
-        "description": "2 CONOS SENCILLOS de 82 g c/u (sabores a escoger: chocolate, vainilla o combinado) por $10. Válido del 28 de junio al 11 de octubre del 2021 y/o hasta agotar existencias."
+        "description": "2 Whopper sin queso de 306g a precio de 1."
     },
     {
         "id": 124,
-        "name": "Papas 3x2",
+        "name": "Te faltarán dedos pero no antojo.",
         "price": 64.00,
         "rating": 4.7,
         "photo": "https://s3-sa-east-1.amazonaws.com/api-lac.production/images/discount_images/2021-05-03/d6266eb8cbece202d00ca967bbe2ea1e.jpeg",
@@ -18,7 +18,7 @@
     },
     {
         "id": 125,
-        "name": "Combo Whopper",
+        "name": "Combo Whopper S/Q + Cono Sencillo",
         "price": 69.00,
         "rating": 4.6,
         "photo": "https://s3-sa-east-1.amazonaws.com/api-lac.production/images/discount_images/2021-06-28/78ab22c9816434341c4e335aef699585.png",
@@ -26,11 +26,18 @@
     },
     {
         "id": 126,
-        "name": "Cono 2x1",
+        "name": "Así de sencillo te quitas el antojo.",
         "price": 10.00,
         "rating": 4.8,
         "photo": "https://s3-sa-east-1.amazonaws.com/api-lac.production/images/discount_images/2021-05-10/94b0bd6bb943bd22e347d45f084c5777.jpeg",
         "description": "2 CONOS SENCILLOS de 82 g c/u (sabores a escoger: chocolate, vainilla o combinado) por $10. Válido del 28 de junio al 11 de octubre del 2021 y/o hasta agotar existencias."
-    }
-
+    },
+    {
+        "id": 145,
+        "name": "¡Excelso! ¡Magnífico! Noooo ¡Supremo!",
+        "price": 64.00,
+        "rating": 4.8,
+        "photo": "https://s3-sa-east-1.amazonaws.com/api-lac.production/images/discount_images/2021-05-03/d0d735a505f59c7d0b6d2f5416db6ec4.jpeg",
+        "description": "Tres papas grandes al 3x2 a sesenta y cuatro pesos $64.00. Válido del 3 de mayo al 8 de agosto del 2021 y/o hasta agotar existencias."
+    }  
 ]

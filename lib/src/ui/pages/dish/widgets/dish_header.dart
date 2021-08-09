@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:deliveryapp/src/ui/pages/dish/page/dish_controller.dart';
 import 'package:deliveryapp/src/utils/colors.dart';
-import 'package:deliveryapp/src/utils/font_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

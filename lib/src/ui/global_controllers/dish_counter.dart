@@ -3,12 +3,17 @@ import 'package:deliveryapp/src/utils/font_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+enum DishCounterSize { normal, mini }
+
 class DishCounter extends StatefulWidget {
   final void Function(int) onChanged;
-
+  final DishCounterSize size;
+  final int initialValue;
   const DishCounter({
     Key key,
     @required this.onChanged,
+    this.size = DishCounterSize.normal,
+    this.initialValue = 0,
   }) : super(key: key);
 
   @override
@@ -17,6 +22,12 @@ class DishCounter extends StatefulWidget {
 
 class _DishCounterState extends State<DishCounter> {
   int _counter = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _counter = widget.initialValue;
+  }
 
   void _updateCounter(int counter) {
     if (counter >= 0) {
@@ -29,6 +40,9 @@ class _DishCounterState extends State<DishCounter> {
 
   @override
   Widget build(BuildContext context) {
+    final bool mini = widget.size == DishCounterSize.mini;
+    final double padding = mini ? 5 : 10;
+    final double fontSize = mini ? 25 : 30;
     return Align(
       alignment: Alignment.center,
       child: Row(
@@ -36,23 +50,25 @@ class _DishCounterState extends State<DishCounter> {
         children: [
           CupertinoButton(
             child: Icon(Icons.remove),
+            minSize: 20,
             borderRadius: BorderRadius.circular(30),
             onPressed: () => _updateCounter(_counter - 1),
             color: primaryColor,
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(padding),
           ),
           SizedBox(width: 10),
           Text(
             '$_counter',
-            style: FontStyles.regular.copyWith(fontSize: 30),
+            style: FontStyles.regular.copyWith(fontSize: fontSize),
           ),
           SizedBox(width: 10),
           CupertinoButton(
             child: Icon(Icons.add),
+            minSize: 20,
             borderRadius: BorderRadius.circular(30),
             onPressed: () => _updateCounter(_counter + 1),
             color: primaryColor,
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(padding),
           ),
         ],
       ),

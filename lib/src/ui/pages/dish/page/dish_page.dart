@@ -1,8 +1,8 @@
 import 'package:deliveryapp/src/helpers/get.dart';
-import 'package:deliveryapp/src/ui/pages/dish/widgets/dish_counter.dart';
+import 'package:deliveryapp/src/ui/pages/dish/widgets/add_to_cart_button.dart';
+import 'package:deliveryapp/src/ui/global_controllers/dish_counter.dart';
 import 'package:deliveryapp/src/ui/pages/dish/widgets/dish_header.dart';
 import 'package:deliveryapp/src/ui/pages/home/home_controller.dart';
-import 'package:deliveryapp/src/ui/widgets/rounded_button.dart';
 import 'package:deliveryapp/src/utils/colors.dart';
 import 'package:deliveryapp/src/utils/font_styles.dart';
 import 'package:flutter/cupertino.dart';
@@ -50,11 +50,7 @@ class DishPage extends StatelessWidget {
         return controller;
       },
       child: Scaffold(
-        floatingActionButton: RoundedButton(
-          label: 'Agregar al carrito',
-          onPressed: () {},
-          fontSize: 18,
-        ),
+        floatingActionButton: AddToCartButton(),
         body: Container(
           color: bgColor,
           width: double.infinity,
@@ -108,6 +104,7 @@ class DishPage extends StatelessWidget {
                           height: 10,
                         ),
                         DishCounter(
+                          initialValue: controller.dish.counter,
                           onChanged: controller.onCounterChanged,
                         ),
                         SizedBox(

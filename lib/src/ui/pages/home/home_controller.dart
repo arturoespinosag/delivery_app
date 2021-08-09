@@ -7,7 +7,9 @@ class HomeController extends ChangeNotifier {
   int get currentPage => _currentPage;
 
   Map<int, Dish> _favorites = {};
+
   Map<int, Dish> get favorites => _favorites;
+
   bool isFavorite(dish) => _favorites.containsKey(dish.id);
 
   void Function() onDispose;

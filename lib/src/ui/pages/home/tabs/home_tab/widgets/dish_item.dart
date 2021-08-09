@@ -1,11 +1,15 @@
+import 'package:deliveryapp/src/ui/global_controllers/cart_controller.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:provider/provider.dart';
+
 import 'package:deliveryapp/src/data/models/dish.dart';
 import 'package:deliveryapp/src/routes/routes.dart';
 import 'package:deliveryapp/src/ui/pages/dish/page/dish_controller.dart';
 import 'package:deliveryapp/src/utils/colors.dart';
 import 'package:deliveryapp/src/utils/font_styles.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class DishHomeItem extends StatelessWidget {
   const DishHomeItem({
@@ -23,8 +27,11 @@ class DishHomeItem extends StatelessWidget {
   String get tag => '${this.key.toString()}-${item.id}';
 
   void _goToDetails(BuildContext context) {
+    final int counter =
+        context.read<CartController>().getDishCounter(this.item);
+    final Dish dish = item.updateCounter(counter);
     Navigator.of(context).pushNamed(Routes.dish,
-        arguments: DishPageArguments(tag: this.tag, dish: this.item));
+        arguments: DishPageArguments(tag: this.tag, dish: dish));
   }
 
   @override
