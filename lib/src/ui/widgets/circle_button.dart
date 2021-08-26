@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CircleButton extends StatelessWidget {
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final String icon;
   final double size = 50;
   final Color backgroundColor;
   final Color iconColor = Colors.white;
 
   const CircleButton({
-    Key key,
-    @required this.onPressed,
-    @required this.icon,
+    Key? key,
+    required this.onPressed,
+    required this.icon,
     this.backgroundColor = primaryColor,
   }) : super(key: key);
 

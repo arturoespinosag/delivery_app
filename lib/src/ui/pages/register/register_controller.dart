@@ -25,11 +25,11 @@ class RegisterController extends ChangeNotifier {
   Future<bool> submit() async {
     return _repository.register(
       User(
-          id: null,
+          id: DateTime.now().millisecondsSinceEpoch.toString(),
           email: _email,
           name: _name,
           lastName: _lastName,
-          birthday: null),
+          birthday: DateTime(200, 1, 23)),
     );
   }
 }

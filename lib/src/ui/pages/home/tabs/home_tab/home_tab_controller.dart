@@ -26,7 +26,7 @@ class HomeTabController extends ChangeNotifier {
     ),
   ];
 
-  List<Dish> _popularMenu;
+  List<Dish> _popularMenu = [];
 
   List<Dish> get popularMenu => _popularMenu;
 

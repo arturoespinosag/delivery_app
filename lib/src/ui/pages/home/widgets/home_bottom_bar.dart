@@ -8,7 +8,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 class HomeBottomBar extends StatelessWidget {
-  HomeBottomBar({Key key}) : super(key: key);
+  HomeBottomBar({Key? key}) : super(key: key);
 
   final List<_BottomBarItem> _items = [
     _BottomBarItem(icon: 'assets/pages/home/home.svg', label: 'Home'),
@@ -49,9 +49,9 @@ class HomeBottomBar extends StatelessWidget {
 
 class BottomBarTab extends StatelessWidget {
   const BottomBarTab({
-    Key key,
-    @required this.item,
-    @required this.isActive,
+    Key? key,
+    required this.item,
+    required this.isActive,
   }) : super(key: key);
 
   final _BottomBarItem item;
@@ -75,8 +75,10 @@ class BottomBarTab extends StatelessWidget {
 }
 
 class _BottomBarItem {
-  final String icon;
-  final String label;
+  final String icon, label;
 
-  _BottomBarItem({this.icon, this.label});
+  _BottomBarItem({
+    required this.icon,
+    required this.label,
+  });
 }

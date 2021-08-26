@@ -7,7 +7,7 @@ import 'package:deliveryapp/src/ui/pages/dish/page/dish_controller.dart';
 import 'package:deliveryapp/src/ui/widgets/rounded_button.dart';
 
 class AddToCartButton extends StatelessWidget {
-  const AddToCartButton({Key key}) : super(key: key);
+  const AddToCartButton({Key? key}) : super(key: key);
 
   void _addToCart(BuildContext context) {
     final cartController = context.read<CartController>();

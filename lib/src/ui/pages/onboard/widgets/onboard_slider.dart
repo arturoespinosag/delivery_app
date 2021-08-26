@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import '../onboard_controller.dart';
 
 class OnboardSlider extends StatelessWidget {
-  const OnboardSlider({Key key}) : super(key: key);
+  const OnboardSlider({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

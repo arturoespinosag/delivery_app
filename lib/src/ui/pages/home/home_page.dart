@@ -11,13 +11,13 @@ import 'package:provider/provider.dart';
 import 'widgets/cart_button.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<HomeController>(create: (_) {
       final controller = HomeController();
-      WidgetsBinding.instance.addPostFrameCallback(
+      WidgetsBinding.instance!.addPostFrameCallback(
         (_) {
           controller.afterFirstLayout();
         },

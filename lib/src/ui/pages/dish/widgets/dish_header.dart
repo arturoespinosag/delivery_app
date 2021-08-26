@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class DishHeader extends StatelessWidget {
-  const DishHeader({Key key}) : super(key: key);
+  const DishHeader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

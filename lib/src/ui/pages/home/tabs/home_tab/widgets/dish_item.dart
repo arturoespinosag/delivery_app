@@ -13,10 +13,10 @@ import 'package:deliveryapp/src/utils/font_styles.dart';
 
 class DishHomeItem extends StatelessWidget {
   const DishHomeItem({
-    Key key,
-    @required this.item,
-    @required this.width,
-    @required this.isFirst,
+    Key? key,
+    required this.item,
+    required this.width,
+    required this.isFirst,
   }) : super(key: key);
 
   final Dish item;

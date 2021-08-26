@@ -8,14 +8,14 @@ import 'widgets/onboard_footer.dart';
 import 'widgets/onboard_slider.dart';
 
 class OnboardPage extends StatelessWidget {
-  const OnboardPage({Key key}) : super(key: key);
+  const OnboardPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<OnboardController>(
       create: (_) {
         final controller = OnboardController();
-        WidgetsBinding.instance
+        WidgetsBinding.instance!
             .addPostFrameCallback((_) => controller.afterFirstlayout());
         return controller;
       },

@@ -7,11 +7,15 @@ import 'package:provider/provider.dart';
 
 class CartButton extends StatelessWidget {
   const CartButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final hasItems = context.select<CartController, bool>((_) => _.hasItems);
+    if (!hasItems) {
+      return Container();
+    }
     final cart = context.select<CartController, Map<int, Dish>>((_) => _.cart);
 
     return Stack(

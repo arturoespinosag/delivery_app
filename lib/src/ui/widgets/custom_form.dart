@@ -6,13 +6,13 @@ class CustomForm extends StatefulWidget {
   final Widget child;
 
   const CustomForm({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
   }) : super(key: key);
 
   @override
   CustomFormState createState() => CustomFormState();
-  static CustomFormState of(BuildContext context) {
+  static CustomFormState? of(BuildContext context) {
     return context.findAncestorStateOfType<CustomFormState>();
   }
 }

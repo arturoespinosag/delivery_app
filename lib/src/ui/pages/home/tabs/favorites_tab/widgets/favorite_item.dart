@@ -11,7 +11,7 @@ import 'package:deliveryapp/src/utils/font_styles.dart';
 
 class FavoriteItem extends StatelessWidget {
   final Dish dish;
-  const FavoriteItem({Key key, @required this.dish}) : super(key: key);
+  const FavoriteItem({Key? key, required this.dish}) : super(key: key);
 
   void _deleteItem() {
     final homeController = Get.instance.find<HomeController>();

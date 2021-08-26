@@ -10,7 +10,7 @@ import '../onboard_controller.dart';
 
 class OnboardFooter extends StatelessWidget {
   const OnboardFooter({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -55,7 +55,7 @@ class OnboardFooter extends StatelessWidget {
 }
 
 class _Dots extends StatelessWidget {
-  const _Dots({Key key}) : super(key: key);
+  const _Dots({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

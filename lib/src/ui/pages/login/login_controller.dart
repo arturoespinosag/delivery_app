@@ -15,7 +15,7 @@ class LoginController extends ChangeNotifier {
     _password = password;
   }
 
-  Future<User> submit() {
+  Future<User?> submit() {
     return _repository.login(_email, _password);
   }
 }

@@ -7,15 +7,15 @@ class DishPageArguments {
   final Dish dish;
 
   DishPageArguments({
-    @required this.tag,
-    @required this.dish,
+    required this.tag,
+    required this.dish,
   });
 }
 
 class DishController extends ChangeNotifier {
   Dish dish;
   final String tag;
-  VoidCallback onDispose;
+  VoidCallback? onDispose;
   DishController(DishPageArguments arguments, this._isFavorite)
       : this.dish = arguments.dish,
         this.tag = arguments.tag;
@@ -36,7 +36,7 @@ class DishController extends ChangeNotifier {
   @override
   void dispose() {
     if (onDispose != null) {
-      onDispose();
+      onDispose!();
     }
     super.dispose();
   }

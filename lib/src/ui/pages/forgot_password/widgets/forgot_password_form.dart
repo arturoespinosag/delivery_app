@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 import '../forgot_password_controller.dart';
 
 class ForgotPasswordForm extends StatelessWidget {
-  const ForgotPasswordForm({Key key}) : super(key: key);
+  const ForgotPasswordForm({Key? key}) : super(key: key);
 
   void _submit(context) async {
     final controller =

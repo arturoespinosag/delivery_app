@@ -2,7 +2,7 @@ import 'package:deliveryapp/src/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class NotificationsTab extends StatefulWidget {
-  const NotificationsTab({Key key}) : super(key: key);
+  const NotificationsTab({Key? key}) : super(key: key);
 
   @override
   _NotificationsTabState createState() => _NotificationsTabState();

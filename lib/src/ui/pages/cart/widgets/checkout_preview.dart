@@ -8,19 +8,16 @@ import 'package:deliveryapp/src/utils/colors.dart';
 import 'package:deliveryapp/src/utils/font_styles.dart';
 
 class CheckoutPreview extends StatelessWidget {
-  const CheckoutPreview({Key key}) : super(key: key);
+  const CheckoutPreview({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final controller = context.watch<CartController>();
-    final subtotal = controller.cart.values
-        .map((dish) => dish.price * dish.counter)
-        .toList()
-        .reduce((v, e) => v + e);
-    final taxAndFees = double.parse((subtotal * .16).toStringAsFixed(2));
-    final deliveryFee = double.parse((subtotal * .15).toStringAsFixed(2));
-    final total =
-        double.parse((subtotal + taxAndFees + deliveryFee).toStringAsFixed(2));
+    if (!controller.hasItems) {
+      return Center(
+        child: Text('Sin productos en tu carrito'),
+      );
+    }
 
     return Container(
       decoration: BoxDecoration(
@@ -41,10 +38,11 @@ class CheckoutPreview extends StatelessWidget {
           children: [
             Table(
               children: [
-                _buildTableRow('Subtotal:', '$subtotal'),
-                _buildTableRow('Comisiones e impuestos.', '$taxAndFees'),
-                _buildTableRow('Envío:', '$deliveryFee'),
-                _buildTableRow('Total:', '$total'),
+                _buildTableRow('Subtotal:', '${controller.subtotal}'),
+                _buildTableRow(
+                    'Comisiones e impuestos.', '${controller.taxAndFees}'),
+                _buildTableRow('Envío:', '${controller.deliveryFee}'),
+                _buildTableRow('Total:', '${controller.total}'),
               ],
             ),
             SizedBox(height: 20),
@@ -70,10 +68,13 @@ class CheckoutPreview extends StatelessWidget {
   TableRow _buildTableRow(String label, String value) {
     return TableRow(
       children: [
-        Text(label),
+        Text(
+          label,
+          style: FontStyles.regular.copyWith(color: Colors.white),
+        ),
         Text(
           '$value',
-          style: FontStyles.regular,
+          style: FontStyles.title.copyWith(color: Colors.white, fontSize: 15),
           textAlign: TextAlign.right,
         ),
       ],

@@ -9,12 +9,12 @@ import 'dish_item.dart';
 class HorizontalMenu extends StatelessWidget {
   final List<Dish> dishes;
   final String title;
-  final VoidCallback onViewAll;
+  final VoidCallback? onViewAll;
 
   const HorizontalMenu({
-    Key key,
-    @required this.dishes,
-    @required this.title,
+    Key? key,
+    required this.dishes,
+    required this.title,
     this.onViewAll,
   }) : super(key: key);
 
@@ -59,7 +59,7 @@ class HorizontalMenu extends StatelessWidget {
                       isFirst: index == 0,
                     );
                   },
-                  itemCount: (dishes == null) ? 0 : dishes.length,
+                  itemCount: dishes.length,
                 ),
               ),
             ],

@@ -10,8 +10,8 @@ class DishCounter extends StatefulWidget {
   final DishCounterSize size;
   final int initialValue;
   const DishCounter({
-    Key key,
-    @required this.onChanged,
+    Key? key,
+    required this.onChanged,
     this.size = DishCounterSize.normal,
     this.initialValue = 0,
   }) : super(key: key);

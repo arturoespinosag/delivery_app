@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchButton extends StatelessWidget {
   const SearchButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

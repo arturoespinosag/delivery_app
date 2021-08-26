@@ -12,7 +12,7 @@ import 'package:provider/provider.dart';
 import 'widgets/search_button.dart';
 
 class HomeTab extends StatefulWidget {
-  const HomeTab({Key key}) : super(key: key);
+  const HomeTab({Key? key}) : super(key: key);
 
   @override
   _HomeTabState createState() => _HomeTabState();
@@ -25,7 +25,7 @@ class _HomeTabState extends State<HomeTab> with AutomaticKeepAliveClientMixin {
     return ChangeNotifierProvider<HomeTabController>(
       create: (_) {
         final controller = HomeTabController();
-        WidgetsBinding.instance.addPostFrameCallback((_) {
+        WidgetsBinding.instance!.addPostFrameCallback((_) {
           controller.afterFirstLayout();
         });
         return controller;

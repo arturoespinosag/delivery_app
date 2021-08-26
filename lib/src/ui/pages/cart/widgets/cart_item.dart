@@ -1,5 +1,5 @@
 import 'package:deliveryapp/src/ui/global_controllers/cart_controller.dart';
-import 'package:deliveryapp/src/ui/global_controllers/dish_counter.dart';
+import 'package:deliveryapp/src/ui/widgets/dish_counter.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
@@ -12,7 +12,7 @@ import 'package:deliveryapp/src/utils/font_styles.dart';
 
 class CartItem extends StatelessWidget {
   final Dish dish;
-  const CartItem({Key key, @required this.dish}) : super(key: key);
+  const CartItem({Key? key, required this.dish}) : super(key: key);
 
   void _deleteItem(BuildContext context) {
     final cartController = context.read<CartController>();

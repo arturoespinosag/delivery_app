@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class SocialLogin extends StatelessWidget {
   const SocialLogin({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

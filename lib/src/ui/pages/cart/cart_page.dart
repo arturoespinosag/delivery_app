@@ -10,7 +10,7 @@ import 'package:deliveryapp/src/utils/font_styles.dart';
 import 'widgets/cart_item.dart';
 
 class CartPage extends StatelessWidget {
-  const CartPage({Key key}) : super(key: key);
+  const CartPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

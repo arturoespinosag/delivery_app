@@ -12,7 +12,7 @@ class HomeController extends ChangeNotifier {
 
   bool isFavorite(dish) => _favorites.containsKey(dish.id);
 
-  void Function() onDispose;
+  void Function()? onDispose;
 
   final TabController tabController =
       TabController(length: 4, vsync: NavigatorState());
@@ -48,7 +48,7 @@ class HomeController extends ChangeNotifier {
   void dispose() {
     tabController.dispose();
     if (this.onDispose != null) {
-      this.onDispose();
+      this.onDispose!();
     }
     super.dispose();
   }

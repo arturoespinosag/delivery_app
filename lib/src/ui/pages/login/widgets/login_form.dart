@@ -1,4 +1,5 @@
 import 'package:deliveryapp/src/data/models/user.dart';
+import 'package:deliveryapp/src/helpers/get.dart';
 import 'package:deliveryapp/src/routes/routes.dart';
 import 'package:deliveryapp/src/ui/widgets/input_text.dart';
 import 'package:deliveryapp/src/ui/widgets/rounded_button.dart';
@@ -14,13 +15,13 @@ import '../login_controller.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   void _submit(BuildContext context) async {
     final controller = context.read<LoginController>();
     ProgressDialog.show(context);
-    final User user = await controller.submit();
+    final User? user = await controller.submit();
     Navigator.pop(context);
     if (user == null) {
       showDialog(
@@ -31,6 +32,7 @@ class LoginForm extends StatelessWidget {
         ),
       );
     } else {
+      Get.instance.put<User>(user);
       Navigator.pushNamedAndRemoveUntil(
         context,
         Routes.home,

@@ -8,7 +8,7 @@ import 'package:deliveryapp/src/ui/pages/home/tabs/favorites_tab/widgets/favorit
 import 'package:deliveryapp/src/utils/colors.dart';
 
 class FavoritesTab extends StatefulWidget {
-  const FavoritesTab({Key key}) : super(key: key);
+  const FavoritesTab({Key? key}) : super(key: key);
 
   @override
   _FavoritesTabState createState() => _FavoritesTabState();
