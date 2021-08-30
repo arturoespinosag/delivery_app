@@ -1,4 +1,5 @@
 import 'package:deliveryapp/src/ui/global_controllers/cart_controller.dart';
+import 'package:deliveryapp/src/ui/global_controllers/notifications_controller.dart';
 import 'package:deliveryapp/src/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,9 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => CartController(),
-        )
+        ChangeNotifierProvider<CartController>(create: (_) => CartController()),
+        ChangeNotifierProvider<NotificationsController>(
+            create: (_) => NotificationsController())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
