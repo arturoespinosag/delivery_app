@@ -14,12 +14,14 @@ class NotificationsController extends ChangeNotifier {
   List<AppNotification> get notifications => _notifications;
 
   NotificationsController() {
+    print('Notifications controller constructor');
     _subscription =
         _wsRepository.onNotification.listen(this._onNotificationListener);
   }
 
   void _onNotificationListener(AppNotification notification) {
-    _notifications.add(notification);
+    print('onNotificationListener');
+    _notifications = [notification, ...notifications];
     notifyListeners();
   }
 
