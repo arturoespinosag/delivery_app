@@ -6,7 +6,6 @@ import 'package:deliveryapp/src/utils/colors.dart';
 import 'package:deliveryapp/src/utils/font_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
 
 import 'widgets/search_button.dart';
@@ -25,7 +24,7 @@ class _HomeTabState extends State<HomeTab> with AutomaticKeepAliveClientMixin {
     return ChangeNotifierProvider<HomeTabController>(
       create: (_) {
         final controller = HomeTabController();
-        WidgetsBinding.instance!.addPostFrameCallback((_) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           controller.afterFirstLayout();
         });
         return controller;

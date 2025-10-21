@@ -1,14 +1,12 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:deliveryapp/src/data/models/dish.dart';
 import 'package:deliveryapp/src/ui/global_controllers/cart_controller.dart';
 import 'package:deliveryapp/src/ui/widgets/dish_counter.dart';
-import 'package:flutter/material.dart';
-
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:provider/provider.dart';
-
-import 'package:deliveryapp/src/data/models/dish.dart';
 import 'package:deliveryapp/src/utils/colors.dart';
 import 'package:deliveryapp/src/utils/font_styles.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:provider/provider.dart';
 
 class CartItem extends StatelessWidget {
   final Dish dish;
@@ -28,18 +26,14 @@ class CartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Slidable(
-      actionPane: SlidableDrawerActionPane(),
-      secondaryActions: [
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          child: IconSlideAction(
-            caption: 'Borrar',
-            color: Colors.red,
-            icon: Icons.delete,
-            onTap: () => _deleteItem(context),
+      endActionPane: ActionPane(
+        motion: StretchMotion(),
+        children: [
+          SlidableAction(
+            onPressed: (context) => _deleteItem(context),
           ),
-        )
-      ],
+        ],
+      ),
       child: Container(
         decoration: BoxDecoration(
           color: bgColor,

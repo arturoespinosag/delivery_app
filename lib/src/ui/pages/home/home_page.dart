@@ -10,14 +10,25 @@ import 'package:provider/provider.dart';
 
 import 'widgets/cart_button.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late final HomeController controller;
+  @override
+  void initState() {
+    controller = HomeController();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<HomeController>(create: (_) {
-      final controller = HomeController();
-      WidgetsBinding.instance!.addPostFrameCallback(
+      WidgetsBinding.instance.addPostFrameCallback(
         (_) {
           controller.afterFirstLayout();
         },

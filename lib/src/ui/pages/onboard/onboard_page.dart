@@ -1,5 +1,4 @@
 import 'package:deliveryapp/src/utils/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +14,7 @@ class OnboardPage extends StatelessWidget {
     return ChangeNotifierProvider<OnboardController>(
       create: (_) {
         final controller = OnboardController();
-        WidgetsBinding.instance!
+        WidgetsBinding.instance
             .addPostFrameCallback((_) => controller.afterFirstlayout());
         return controller;
       },

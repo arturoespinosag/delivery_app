@@ -39,7 +39,7 @@ class InputTextState extends State<InputText> {
   void initState() {
     super.initState();
     _obscureText = widget.obscureText;
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       _formState = CustomForm.of(context);
       _formState?.register(this);
     });
@@ -83,11 +83,11 @@ class InputTextState extends State<InputText> {
         labelText: widget.labelText,
         suffixIcon: widget.obscureText
             ? CupertinoButton(
-                minSize: 25,
                 padding: EdgeInsets.all(10),
                 child: Icon(
                     _obscureText ? Icons.visibility : Icons.visibility_off),
                 onPressed: _onVisibleChanged,
+                minimumSize: Size(25, 25),
               )
             : Icon(
                 Icons.check_circle,

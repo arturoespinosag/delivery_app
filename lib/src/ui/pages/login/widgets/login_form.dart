@@ -5,10 +5,8 @@ import 'package:deliveryapp/src/ui/widgets/input_text.dart';
 import 'package:deliveryapp/src/ui/widgets/rounded_button.dart';
 import 'package:deliveryapp/src/utils/dialogs/progress_dialog.dart';
 import 'package:deliveryapp/src/utils/font_styles.dart';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
 
 import '../login_controller.dart';
@@ -23,22 +21,22 @@ class LoginForm extends StatelessWidget {
     ProgressDialog.show(context);
     final User? user = await controller.submit();
     Navigator.pop(context);
-    if (user == null) {
-      showDialog(
-        context: context,
-        builder: (_) => AlertDialog(
-          title: Text('ERROR'),
-          content: Text('Usuario o contraseña incorrecto'),
-        ),
-      );
-    } else {
-      Get.instance.put<User>(user);
-      Navigator.pushNamedAndRemoveUntil(
-        context,
-        Routes.home,
-        (_) => false,
-      );
-    }
+    // if (user == null) {
+    //   showDialog(
+    //     context: context,
+    //     builder: (_) => AlertDialog(
+    //       title: Text('ERROR'),
+    //       content: Text('Usuario o contraseña incorrecto'),
+    //     ),
+    //   );
+    // } else {
+    Get.instance.put<User>(user);
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      Routes.home,
+      (_) => false,
+    );
+    // }
   }
 
   @override
